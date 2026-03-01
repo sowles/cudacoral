@@ -14,14 +14,19 @@ int main(int argc, char* argv[]) {
 	float* B_h = (float*)malloc(n * sizeof(float));
 	float* C_h = (float*)malloc(n * sizeof(float));
 
-	for (int i = 0; i < n; ++i)
+	for (int i = 0; i < n; ++i) {
+		printf("A dimension %d: ", i + 1);
 		scanf("%f", &A_h[i]);
+	}
 
-	for (int i = 0; i < n; ++i)
+	for (int i = 0; i < n; ++i) {
+		printf("B dimension %d: ", i + 1);
 		scanf("%f", &B_h[i]);
+	}
 
 	vecAdd(A_h, B_h, C_h, n);
 
+	printf("Result: ");
 	for (int i = 0; i < n; ++i)
 		printf("%f ", C_h[i]);
 	printf("\n");
